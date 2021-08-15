@@ -5,13 +5,14 @@ class Main extends React.Component{
   constructor(){
     super()
     this.state={
-     todos:[{}],
+     todos:[],
      value:""
     }
   }
-  add_todo=(e)=>{
+  add_todo=()=>{
+    let obj ={title:this.state.value}
     this.setState({
-      todos:[...this.state.todos,this.state.value],
+      todos:[...this.state.todos,obj],
       value:"" 
     
     })
@@ -22,11 +23,19 @@ class Main extends React.Component{
      todos:[...this.state.todos]
    })
  }
- edit_todo=(index,val)=>{
-     this.state.todos[index].edit=true;
+ edit_todo=(index)=>{
+   this.state.todos[index].edit = true
+    // var update_value= prompt("enter Value")
+    // this.state.todos[index]=update_value
      this.setState({
       todos:[...this.state.todos]
     })
+}
+update=(index)=>{
+  this.state.todos[index].edit = false
+  this.setState({
+    todos:[...this.state.todos]
+  })
 }
 
   render(){
@@ -38,9 +47,13 @@ class Main extends React.Component{
      <button onClick={this.add_todo}>Add Todo</button>
      <ol>
        {todos.map((v,i)=>{
-        return <li  key={i}>{v.edit? <input type="text" /> :v.title}
+        return <li  key={i}>
+          {v.edit? <input type="text"/>:v.title}
         <button onClick={()=>this.delete_todo(i)} >DELETE</button>
-        <button onClick={()=>this.edit_todo(i,v.title)}>EDIT</button>
+        {v.edit?
+          <button onClick={()=>this.update(i)}>UPDATE</button>:
+          <button onClick={()=>this.edit_todo(i,v.title)}>EDIT</button>
+        }
         </li>
        })}
      </ol>
