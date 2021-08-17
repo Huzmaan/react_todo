@@ -14,7 +14,7 @@ function Footer({}){
 //    }
     }
     return  (
-        <div className="bg-dark text-light py-3"   style={FooterStyles}>
+        <div className="bg-dark text-light py-2"   style={FooterStyles}>
         <p> 
             Copyright &copy; My React Project. All rights reserved.
         </p>
