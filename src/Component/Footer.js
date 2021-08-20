@@ -3,15 +3,13 @@ import React from 'react';
 
 function Footer({}){
     let FooterStyles = {
-     position: 'absolute',
-     top:"auto",
-     width:"100%",
-     textAlign:"center",
-    //  background-color:"limegreen",
-//    @media (min-width:30%){
-//        position: 'absolute',
-
-//    }
+   margintop: '1rem',
+   padding:"1rem",
+   position:'relative',
+   bottom:'0',
+   left:'0',
+   width:'100%',
+   textAlign:'center',
     }
     return  (
         <div className="bg-dark text-light py-2"   style={FooterStyles}>
