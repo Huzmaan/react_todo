@@ -59,9 +59,9 @@ class Main extends React.Component {
   render() {
     let { todos, value, updateInput } = this.state;
     return (
-      <div style={{ minHeight: '87.8vh' }}>
+      <div style={{ minHeight: '87.8vh',flexDirection:'column',paddingLeft:'28%',display: 'flex' ,width:'75%',}}>
 
-        <input onKeyPress={(e) => e.key === 'Enter' && this.add_todo()} value={value} onChange={(e) => this.setState({ value: e.target.value })} type="text" placeholder="Enter your Todo" />
+        <input  style={{textAlign: 'center'}} onKeyPress={(e) => e.key === 'Enter' && this.add_todo()} value={value} onChange={(e) => this.setState({ value: e.target.value })} type="text" placeholder="Enter your Todo" />
         <button onClick={this.add_todo}>Add Todo</button>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', height: '100%' }}>
           <table style={{ width: '100%' }}>
@@ -69,7 +69,7 @@ class Main extends React.Component {
               return <tr> 
                 <td>{i+1}</td>
                 <td key={i}>
-                {v.edit ? <input value={updateInput} onChange={(e) => this.setState({ updateInput: e.target.value })} type="text" /> : v.title}</td>
+                {v.edit ? <input style={{fontSize: '1%'}} value={updateInput} onChange={(e) => this.setState({ updateInput: e.target.value })} type="text" /> : v.title}</td>
                 <td><button onClick={() => this.delete_todo(i)} >DELETE</button></td>
                 {v.edit ?
                   <td><button onClick={() => this.update(i, v.title)}>UPDATE</button></td> :
