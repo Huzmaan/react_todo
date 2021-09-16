@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -36,4 +36,10 @@
     transform: rotate(360deg);
   }
 }
+ */
+ .header-css{
+   background-color: darkorange;
+   display: flex;
+   flex-direction: column;
+  }
 

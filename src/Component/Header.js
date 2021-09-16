@@ -1,13 +1,13 @@
 import React from 'react';
 import {Navbar,Nav} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '../App.css'
 
 class Header extends React.Component {
     render() {
         return(
-            <Navbar style={{ backgroundColor: 'darkorange', justifyContent:"space-evenly" , display: 'flex'}}>
-  <Navbar.Brand href="#">My Todo List</Navbar.Brand>
+            <Navbar className="header-css">
+  <Navbar.Brand style={{display:"flex",textAlign:"center",fontSize:"xx-large",fontWeight:"bolder"}} href="#">My Todo List</ Navbar.Brand>
   <Navbar.Toggle aria-controls="navbarScroll" />
   <Navbar.Collapse id="navbarScroll">
     <Nav
